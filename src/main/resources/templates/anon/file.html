@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<form action="/file/upload" method="POST" enctype="multipart/form-data">
+    文件上传到本地：<input type="file" name="file"/>
+    <input type="submit" value="上传"/>
+</form>
+
+<form action="/file/uploadByHttp" method="POST" enctype="multipart/form-data">
+    文件上传到服务器：<input type="file" name="file"/>
+    <input type="submit" value="上传"/>
+</form>
+
+<a href="/file/download">下载</a>
+
+<p>多文件上传</p>
+<form method="POST" enctype="multipart/form-data" action="/file/batchFiles">
+    <p>文件1：<input type="file" name="file"/></p>
+    <p>文件2：<input type="file" name="file"/></p>
+    <p><input type="submit" value="上传"/></p>
+</form>
+</body>
+</html>

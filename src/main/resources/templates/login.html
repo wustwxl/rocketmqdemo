@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+</head>
+  <body>
+
+  <a th:if="${msg != ''}" >
+      错误信息：<h4 th:text="${msg}"></h4>
+  </a>
+
+  <form action="/login" method="post">
+      <p>账号：<input type="text" name="username"/></p>
+      <p>密码：<input type="text" name="password"/></p>
+      <p><input type="submit" value="登录"/></p>
+  </form>
+  </body>
+</html>
+
+
