@@ -156,7 +156,8 @@ public class MQProducerConfiguration {
 
                 //这里的arg就是orderId传进来的
                 Integer id = (Integer) arg;
-                //取模决定放在哪个数据库
+                // Hash取模法，让同一个订单发送到同一个队列中，再使用同步发送，只有同个订单的创建消息发送成功，再发送支付消息。
+                // 这样，我们保证了发送有序。
                 int index = id % mqs.size();
                 return mqs.get(index);
             }
